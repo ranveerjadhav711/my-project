@@ -52,23 +52,24 @@ int main()
 	
 	
 	while(temp != head);
-	
-		printf("(Back to head)");
+	printf("(Back to head)");
+    
+	largest = newnode->data;
+    smallest = newnode->data;
+        
+       temp = head;
+        do
+        { 
+	    	if(temp->data > largest)
+		         largest = temp->data;
+		         
+            if (temp->data < smallest)
+                smallest =temp->data;
+   
+	        	temp=temp->next;
 		
-		 if (i == 1)
-        {
-            largest = newnode->data;
-            smallest = newnode->data;
-        }
-        else
-        {
-            if (newnode->data > largest)
-                largest = newnode->data;
-
-            if (newnode->data < smallest)
-                smallest = newnode->data;
-        }
-		
+}
+    while(temp != head);
 	printf("\nSmallest : %d",smallest);
 	printf("\nLargest : %d ",largest);
 	return 0;
